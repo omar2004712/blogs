@@ -3,10 +3,10 @@ import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 // eslint-disable-next-line arrow-body-style
 export const fetchPosts = () => async (dispatch) => {
-  const response = await jsonPlaceholder.get('/posts');
+  const { data } = await jsonPlaceholder.get('/posts');
 
   dispatch({
     type: 'FETCH_POST',
-    payload: response,
+    payload: data,
   });
 };
