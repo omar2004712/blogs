@@ -2,7 +2,7 @@
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 // eslint-disable-next-line arrow-body-style
-export const fetchPosts = async (dispatch) => async () => {
+export const fetchPosts = () => async (dispatch) => {
   const response = await jsonPlaceholder.get('/posts');
 
   dispatch({
