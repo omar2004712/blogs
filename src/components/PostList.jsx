@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import profilePhoto from '../images/profile-photo.png';
 import { fetchPosts } from '../actions';
+import UserHeader from './UserHeader';
 
 function PostList({ posts, fetchPosts }) {
   useEffect(() => {
@@ -22,6 +23,7 @@ function PostList({ posts, fetchPosts }) {
         <div>
           <h2 className="text-xl font-semibold">{post.title}</h2>
           <p>{post.body}</p>
+          <UserHeader userId={post.userId} />
         </div>
       </div>
     ));
