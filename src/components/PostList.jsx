@@ -4,12 +4,12 @@ import '../styles/index.css';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import profilePhoto from '../images/profile-photo.png';
-import { fetchPosts } from '../actions';
+import { fetchPostsAndUsers } from '../actions';
 import UserHeader from './UserHeader';
 
-function PostList({ posts, fetchPosts }) {
+function PostList({ posts, fetchPostsAndUsers }) {
   useEffect(() => {
-    fetchPosts();
+    fetchPostsAndUsers();
   }, []);
 
   const renderList = () =>
@@ -37,4 +37,4 @@ function PostList({ posts, fetchPosts }) {
 
 const mapStateToProps = (state) => ({ posts: state.posts });
 
-export default connect(mapStateToProps, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPostsAndUsers })(PostList);
